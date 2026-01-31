@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Akıllı Finans Takip Paneli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <h1>📊 Akıllı Finans Takip Paneli</h1>
+  <button id="themeBtn">🌙 Tema</button>
+</header>
+
+<main>
+  <section class="card">
+    <h2>💱 Döviz</h2>
+    <div id="forex"></div>
+  </section>
+
+  <section class="card">
+    <h2>🪙 Kripto</h2>
+    <div id="crypto"></div>
+  </section>
+
+  <section class="card">
+    <h2>📈 Grafik</h2>
+    <canvas id="priceChart"></canvas>
+  </section>
+
+  <section class="card">
+    <h2>🔔 Fiyat Alarmı</h2>
+    <input id="alertValue" type="number" placeholder="BTC hedef fiyat ($)">
+    <button onclick="setAlert()">Alarm Kur</button>
+  </section>
+</main>
+
+<footer>
+  <p>Finans Paneli | GitHub Pages</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/alerts.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>
